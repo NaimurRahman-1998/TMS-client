@@ -39,7 +39,7 @@ const Home = () => {
                                 'Your task has been deleted.',
                                 'success'
                             )
-                            const remaining = tasks.filter(task => task._id !== id);
+                            const remaining = tasks.filter(task => task?._id !== id);
                             setTasks(remaining)
                         }
                     })
@@ -73,14 +73,14 @@ const Home = () => {
                         </thead>
                         <tbody>
                             {
-                                tasks.map(task => <tr key={task._id}>
-                                    <th><button onClick={() => handleDelete(task._id)} className="px-6 bg-red-500 rounded-full ">X</button></th>
-                                    <td>{task.name}</td>
-                                    <td>{task.description}</td>
-                                    <td>{task.time}</td>
-                                    <td> <span>{task.status}</span>
+                                tasks?.map(task => <tr key={task?._id}>
+                                    <th><button onClick={() => handleDelete(task?._id)} className="px-6 bg-red-500 rounded-full ">X</button></th>
+                                    <td>{task?.name}</td>
+                                    <td>{task?.description}</td>
+                                    <td>{task?.time}</td>
+                                    <td> <span>{task?.status}</span>
                                         <div>
-                                        <label htmlFor={task._id} className="px-6 bg-green-500 rounded-full">Update</label>
+                                        <label htmlFor={task?._id} className="px-6 bg-green-500 rounded-full">Update</label>
                                             <Modal data={task}/>
                                         </div>
                                     </td>

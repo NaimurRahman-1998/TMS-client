@@ -48,10 +48,10 @@ const AddTask = () => {
         <div>
         <TransitionEffect></TransitionEffect>
         <Header></Header>
-            <div className="w-[40%] mx-auto mt-10">
+            <div className="w-[90%] lg:w-[40%] mx-auto mt-10">
                 <form onSubmit={() => handleTask(event)}>
                     <div className="card-body">
-                        <div className="flex justify-between gap-6">
+                        <div className="block lg:flex justify-between gap-6">
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Task Name</span>
