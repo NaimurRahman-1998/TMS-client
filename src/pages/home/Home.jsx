@@ -54,16 +54,16 @@ const Home = () => {
             <TransitionEffect></TransitionEffect>
             
             <div className="flex justify-center">
-                <Link to='/addTask'><button className="btn btn-neutral">Add A New Task</button></Link>
+                <Link to='/addTask'><button className="btn btn-primary">Add A New Task</button></Link>
             </div>
 
 
             <div className="mt-10">
-                <h1 className="text-center">Task Lists</h1>
+                <h1 className="text-center text-2xl font-semibold uppercase">Task Lists</h1>
                 <div className="overflow-x-auto">
                     <table className="table table-zebra">
                         <thead>
-                            <tr>
+                            <tr className="font-bold text-xl">
                                 <th>Delete</th>
                                 <th>Task</th>
                                 <th>Description</th>
@@ -73,12 +73,13 @@ const Home = () => {
                         </thead>
                         <tbody>
                             {
-                                tasks?.map(task => <tr key={task?._id}>
+                                tasks?.map(task => <tr className="text-base" key={task?._id}>
                                     <th><button onClick={() => handleDelete(task?._id)} className="px-6 bg-red-500 rounded-full ">X</button></th>
                                     <td>{task?.name}</td>
                                     <td>{task?.description}</td>
                                     <td>{task?.time}</td>
-                                    <td className="flex justify-between w-[12rem]"> <span>{task?.status}</span>
+                                    <td className="flex justify-between w-[13rem]"> 
+                                    {task.status === 'complete' ? <span className="text-green-500 font-medium">{task.status}</span> : <span className="text-yellow-500 font-medium">{task.status}</span>}
                                         <div>
                                         <label htmlFor={task?._id} className="px-6 bg-green-500 rounded-full">Update</label>
                                             <Modal data={task}/>

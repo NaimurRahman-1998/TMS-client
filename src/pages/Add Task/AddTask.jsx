@@ -56,13 +56,13 @@ const AddTask = () => {
                                 <label className="label">
                                     <span className="label-text">Task Name</span>
                                 </label>
-                                <input type="text" name="name" placeholder="name" className="input input-bordered" />
+                                <input type="text" required name="name" placeholder="name" className="input input-bordered" />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Status</span>
                                 </label>
-                                <select name="status">
+                                <select required name="status">
                                     <option value="active">Active</option>
                                     <option value="complete">Completed</option>
                                     <option value="pending">Pending</option>
@@ -72,14 +72,14 @@ const AddTask = () => {
                                 <label className="label">
                                     <span className="label-text">Time</span>
                                 </label>
-                                <input type="time" name="time" placeholder="name" className="input input-bordered" />
+                                <input required type="time" name="time" placeholder="name" className="input input-bordered" />
                             </div>
                         </div>
                         <div className="w-full">
                             <label className="label">
                                 <span className="label-text">Description</span>
                             </label>
-                            <input type="text" name="description" className="input w-full h-20 input-bordered" />
+                            <input required type="text" name="description" className="input w-full h-20 input-bordered" />
                         </div>
                         <input type="submit" value="submit" className="btn btn-primary" />
                     </div>
