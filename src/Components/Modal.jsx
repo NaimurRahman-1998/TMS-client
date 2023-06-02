@@ -32,7 +32,7 @@ const Modal = ({ data }) => {
                                 'Your status has been updated.',
                                 'success'
                             )
-                            window.location.reload(false);
+
                         }
                     })
 
@@ -43,6 +43,9 @@ const Modal = ({ data }) => {
 
     }
 
+    function refreshPage() {
+        window.location.reload(false);
+    }
 
     return (
         <>
@@ -68,7 +71,7 @@ const Modal = ({ data }) => {
                         </div>
                     </form>
                     <div className="modal-action">
-                        <label  htmlFor={data._id} className="btn">Close!</label>
+                        <label onClick={refreshPage} htmlFor={data._id} className="btn">Close!</label>
                     </div>
                 </div>
             </div>

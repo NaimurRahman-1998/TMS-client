@@ -78,7 +78,7 @@ const Home = () => {
                                     <td>{task?.name}</td>
                                     <td>{task?.description}</td>
                                     <td>{task?.time}</td>
-                                    <td> <span>{task?.status}</span>
+                                    <td className="flex justify-between w-[12rem]"> <span>{task?.status}</span>
                                         <div>
                                         <label htmlFor={task?._id} className="px-6 bg-green-500 rounded-full">Update</label>
                                             <Modal data={task}/>
